@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ali · Computational Physics</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f6f8fa; color: #24292f; line-height: 1.6; }
+
+    header { background: #fff; border-bottom: 1px solid #d0d7de; padding: 48px 24px 36px; text-align: center; }
+    header h1 { font-size: 2.2rem; font-weight: 700; }
+    header p.subtitle { color: #57606a; font-size: 1.05rem; margin-top: 6px; }
+    .badges { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .badges a img { display: block; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+    h2 { font-size: 1.4rem; font-weight: 600; margin: 48px 0 20px; padding-bottom: 8px; border-bottom: 2px solid #d0d7de; }
+
+    .about-list { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 1rem; }
+    .about-list li { display: flex; gap: 10px; }
+
+    .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+
+    .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; margin-top: 8px; }
+    .toc-grid a { color: #0969da; text-decoration: none; font-size: 0.95rem; }
+    .toc-grid a:hover { text-decoration: underline; }
+
+    .project { background: #fff; border: 1px solid #d0d7de; border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+    .project-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 320px; }
+    .project-inner.reverse { direction: rtl; }
+    .project-inner.reverse > * { direction: ltr; }
+
+    .project-text { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .project-text h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; }
+    .project-text h3 a { color: #0969da; text-decoration: none; }
+    .project-text h3 a:hover { text-decoration: underline; }
+    .project-text p { color: #57606a; font-size: 0.97rem; line-height: 1.7; }
+
+    .project-img { background: #f6f8fa; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-left: 1px solid #d0d7de; }
+    .project-inner.reverse .project-img { border-left: none; border-right: 1px solid #d0d7de; }
+    .project-img img { width: 100%; max-width: 520px; height: auto; border-radius: 6px; display: block; }
+    .project-img figcaption { margin-top: 10px; font-size: 0.82rem; color: #57606a; text-align: center; font-style: italic; }
+
+    .stats { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+    .stats img { height: 155px; }
+
+    footer { text-align: center; padding: 24px; color: #57606a; font-size: 0.85rem; border-top: 1px solid #d0d7de; background: #fff; }
+
+    @media (max-width: 700px) {
+      .project-inner, .project-inner.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .project-img { border-left: none; border-top: 1px solid #d0d7de; }
+      .project-inner.reverse .project-img { border-right: none; border-top: 1px solid #d0d7de; }
+      .toc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hi, I'm Ali 👋</h1>
+  <p class="subtitle">MSc in Physics &amp; Mathematics · University of Granada, Spain</p>
+  <div class="badges">
+    <a href="mailto:alisalemstd@gmail.com"><img src="https://img.shields.io/badge/email-alisalemstd%40gmail.com-blue?style=flat-square&logo=gmail&logoColor=white" alt="email"/></a>
+    <a href="https://github.com/Alisama20"><img src="https://img.shields.io/badge/GitHub-Alisama20-181717?style=flat-square&logo=github" alt="github"/></a>
+    <a href="https://www.linkedin.com/in/alisama"><img src="https://img.shields.io/badge/LinkedIn-alisama-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="linkedin"/></a>
+  </div>
+</header>
+
+<main>
+
+  <h2>About me</h2>
+  <p style="margin-bottom:14px;">I am a physics and mathematics student with a strong interest in <strong>computational methods for physical systems</strong>. My main research areas are:</p>
+  <ul class="about-list">
+    <li><span>🔵</span><span><strong>Computational Electromagnetics</strong> — integral equation methods, scattering, wave propagation</span></li>
+    <li><span>🟢</span><span><strong>Monte Carlo Methods</strong> — stochastic simulation, diffusion MC, particle-in-cell</span></li>
+    <li><span>🔴</span><span><strong>Numerical Methods in general</strong> — spectral methods, finite differences, integrators, FFT</span></li>
+  </ul>
+  <p style="margin-top:14px;">I enjoy working at the intersection of mathematical rigour and physical intuition, building solvers from scratch and comparing them with theoretical predictions.</p>
+
+  <h2>🛠 Tools</h2>
+  <div class="tools">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+    <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++"/>
+    <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"/>
+    <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"/>
+    <img src="https://img.shields.io/badge/Numba-00A3E0?style=flat-square" alt="Numba"/>
+    <img src="https://img.shields.io/badge/Matplotlib-11557C?style=flat-square" alt="Matplotlib"/>
+    <img src="https://img.shields.io/badge/LaTeX-008080?style=flat-square&logo=latex&logoColor=white" alt="LaTeX"/>
+    <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
+  </div>
+
+  <h2>📂 Projects</h2>
+  <div class="toc-grid">
+    <a href="#vlasov">⚡ Collisionless Plasma · Vlasov–Maxwell</a>
+    <a href="#mom">🌐 Computational Electromagnetics · Method of Moments</a>
+    <a href="#dmc">🎲 Quantum Monte Carlo · Harmonic Bosons</a>
+    <a href="#tdse">🌊 Quantum Dynamics · Schrödinger Equation</a>
+    <a href="#helmholtz">📐 Spectral Methods · Helmholtz Equation</a>
+    <a href="#nbody">🌌 N-body Dynamics · Molecular &amp; Planetary</a>
+    <a href="#quantum-transport">🔬 Quantum Transport · Nanoelectronics</a>
+    <a href="#threebody">🪐 Celestial Mechanics · Three-Body Problem</a>
+    <a href="#critical">📈 Critical Phenomena &amp; Cooperative Systems</a>
+    <a href="#fft">🔢 FFT &amp; Quantum Physics</a>
+    <a href="#egt">🧬 Stochastic Evolutionary Game Theory</a>
+  </div>
+
+  <div class="project" id="vlasov" style="margin-top:32px;">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Collisionless-Plasma-Vlasov-Maxwell">⚡ Collisionless Plasma · Vlasov–Maxwell</a></h3>
+        <p>Semi-Lagrangian schemes and Particle-in-Cell (PIC) Monte Carlo for the 1D Vlasov–Maxwell system. Simulates Weibel (electromagnetic) and two-stream (electrostatic) plasma instabilities. Implements Strang splitting with cubic Catmull–Rom interpolation and FFT-based Poisson solver.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Collisionless-Plasma-Vlasov-Maxwell/master/figures/twosteaminestability.png" alt="Two-stream instability"/>
+        <figcaption>Two-stream instability: exponential growth of the electric field and electrostatic energy</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="mom">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/MoM-electromagnetic-scattering">🌐 Computational Electromagnetics · Method of Moments</a></h3>
+        <p>Method of Moments implementation of EFIE and MFIE for electromagnetic scattering by PEC bodies. Solves 2D cylinder (pulse and triangular basis) and 3D sphere (RWG basis functions). Validated against analytical Mie series.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/MoM-electromagnetic-scattering/master/figures/RCS2DMFIE.png" alt="RCS MFIE"/>
+        <figcaption>Radar cross section of a 2D PEC cylinder — MFIE vs analytical solution</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="dmc">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Diffusion-Monte-Carlo-for-harmonic-bosons">🎲 Quantum Monte Carlo · Harmonic Bosons</a></h3>
+        <p>Diffusion Monte Carlo (DMC) simulation of N interacting bosons in a 1D harmonic trap. Implements both pure DMC and importance-sampling DMC with a Jastrow trial wave function. Demonstrates 1/N convergence of the ground-state energy.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Diffusion-Monte-Carlo-for-harmonic-bosons/master/figures/E0DMCISN100.png" alt="DMC N=100"/>
+        <figcaption>Ground-state energy distribution for N=100 bosons — importance-sampling DMC</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="tdse">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Crank-Nicolson-solution-of-the-time-dependent-Schrodinger-equation">🌊 Quantum Dynamics · Schrödinger Equation</a></h3>
+        <p>Cayley (Crank–Nicolson) integrator for the 1D time-dependent Schrödinger equation. Exact norm conservation, transmission coefficient T(λ) vs analytical formula, and Monte Carlo quantum measurement simulation.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Crank-Nicolson-solution-of-the-time-dependent-Schrodinger-equation/master/figures/wavepacket_high.png" alt="Wave packet"/>
+        <figcaption>Gaussian wave packet scattering off a rectangular barrier</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="helmholtz">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Chebyshev-Spectral-Galerkin-Method-for-the-Helmholtz-Equation-Theory-and-Implementation">📐 Spectral Methods · Helmholtz Equation</a></h3>
+        <p>Chebyshev spectral–Galerkin discretisation of the 2D Helmholtz equation. Includes full theoretical derivation of the weak formulation, construction of basis functions satisfying Dirichlet BCs, Kronecker-product matrix assembly, and exponential convergence study.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Chebyshev-Spectral-Galerkin-Method-for-the-Helmholtz-Equation-Theory-and-Implementation/master/figures/convergence.png" alt="Convergence"/>
+        <figcaption>Exponential (spectral) convergence of the Chebyshev–Galerkin method</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="nbody">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Verlet-algorithm-applied-to-molecular-and-planetary-dynamics">🌌 N-body Dynamics · Molecular &amp; Planetary</a></h3>
+        <p>Velocity-Verlet N-body integrator (Numba-accelerated) for the Solar System, planet-formation via inelastic collisions, and 2D Lennard-Jones molecular dynamics. Tracks energy conservation, radial distribution function, and temperature equilibration.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Verlet-algorithm-applied-to-molecular-and-planetary-dynamics/master/figures/formation_disk.png" alt="Planet formation"/>
+        <figcaption>Protoplanetary disk formation via inelastic collisions — N-body simulation</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="quantum-transport">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Quantum-transport-nanoelectronics">🔬 Quantum Transport · Nanoelectronics</a></h3>
+        <p>Quantum transport simulation in 1D nanostructures: particle-in-a-box, double-well potential, and ballistic MOSFET I–V characteristics. Solves the Schrödinger equation self-consistently with quantum confinement effects and computes conductance vs gate voltage.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Quantum-transport-nanoelectronics/master/figures/mosfet_iv_family.png" alt="MOSFET IV"/>
+        <figcaption>MOSFET I–V family of curves with quantum confinement</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="threebody">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Earth-Moon-Spacecraft-or-Meteorite-restricted-three-body-problem">🪐 Celestial Mechanics · Three-Body Problem</a></h3>
+        <p>Numerical integration of the circular restricted three-body problem (CR3BP) in the Earth–Moon system. Explores Lagrange points, Jacobi integral conservation, spacecraft transfer orbits, and chaotic meteorite trajectories.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Earth-Moon-Spacecraft-or-Meteorite-restricted-three-body-problem/master/figures/rocket_trajectory_escape.png" alt="Spacecraft trajectory"/>
+        <figcaption>Spacecraft escape trajectory in the Earth–Moon rotating frame</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="critical">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Critical-and-Cooperative-Phenomena-Simulations">📈 Critical Phenomena &amp; Cooperative Systems</a></h3>
+        <p>Monte Carlo simulations of critical phenomena: KPZ universality class, scaling collapse, and wetting dynamics. Extracts critical exponents via finite-size scaling and validates against theoretical predictions of the KPZ universality class.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Critical-and-Cooperative-Phenomena-Simulations/master/figures/varianzasRDSR.png" alt="KPZ variance"/>
+        <figcaption>Interface width variance vs time — KPZ universality class (RDSR model)</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="fft">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/FFT-and-quantum-physics">🔢 FFT &amp; Quantum Physics</a></h3>
+        <p>Self-contained recursive and iterative FFT implementations validated against analytical DFTs and NumPy. Applied to the quantum harmonic oscillator via FFT-based split-operator imaginary-time propagation. Includes performance benchmarks.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/FFT-and-quantum-physics/master/figures/harmonic_oscillator.png" alt="Harmonic oscillator"/>
+        <figcaption>Quantum harmonic oscillator ground state via imaginary-time FFT propagation</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="egt">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Stochastic-Evolutionary-Game-Theory">🧬 Stochastic Evolutionary Game Theory</a></h3>
+        <p>Monte Carlo simulation of evolutionary dynamics in finite populations. Computes fixation probabilities and fixation times for different game-theoretic payoff matrices, comparing stochastic results with analytical predictions from the Moran process.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Stochastic-Evolutionary-Game-Theory/master/figures/fixation_probability.png" alt="Fixation probability"/>
+        <figcaption>Fixation probability vs initial frequency — Monte Carlo vs analytical Moran process</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <h2>📊 GitHub Stats</h2>
+  <div class="stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=Alisama20&show_icons=true&theme=default&hide_border=true" alt="stats"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Alisama20&layout=compact&hide_border=true" alt="langs"/>
+  </div>
+
+</main>
+
+<footer>University of Granada · Faculty of Sciences · Academic Year 2025/2026</footer>
+
+</body>
+</html>
