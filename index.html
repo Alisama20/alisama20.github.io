@@ -106,6 +106,7 @@
     <a href="#mosfet-noise">📡 MOSFET 1/f Noise · McWhorter Model</a>
     <a href="#fram">🧲 FRAM Cell · Landau-Khalatnikov Model</a>
     <a href="#ising">🔴 Ising Model · Monte Carlo</a>
+    <a href="#pml-fdtd">📡 FDTD · Perfectly Matched Layers</a>
   </div>
 
   <div class="project" id="vlasov" style="margin-top:32px;">
@@ -287,6 +288,20 @@
       <div class="project-img">
         <img src="https://raw.githubusercontent.com/Alisama20/Ising-Model-Monte-Carlo/main/figures/ising_spin_configurations.png" alt="Ising spin configurations"/>
         <figcaption>Typical spin configurations of the 2D Ising model at six temperatures spanning the phase transition</figcaption>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="project" id="pml-fdtd">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/FDTD-PML-Absorbing-Boundary-Conditions">📡 FDTD · Perfectly Matched Layers</a></h3>
+        <p>FDTD solvers for the 1D and 2D electromagnetic wave equations with Perfectly Matched Layer (PML) absorbing boundary conditions. Implements the Gedney polynomial conductivity profile with correct staggered-grid evaluation of σ<sub>E</sub> and σ<sub>H</sub>, and full treatment of 2D corner regions (σ = σ<sub>x</sub> + σ<sub>y</sub>). Validates the measured reflection coefficient against the theoretical target <em>R</em><sub>0</sub> as a function of PML width and spatial resolution. Numba-accelerated convergence sweeps.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/FDTD-PML-Absorbing-Boundary-Conditions/main/figures/pml2d_field_comparison.png" alt="2D PML vs PEC"/>
+        <figcaption>FDTD 2D: PML (top) absorbs the wave cleanly at six time steps; PEC walls (bottom) produce persistent reflection interference</figcaption>
       </div>
     </div>
   </div>
