@@ -34,6 +34,7 @@
       --c-spectral:#d97706;   /* amber     – spectral / numerical */
       --c-nbody:   #2563eb;   /* blue      – N-body / celestial */
       --c-nano:    #db2777;   /* pink      – nanoelectronics */
+      --c-nets:    #f97316;   /* orange    – complex networks */
     }
 
     body {
@@ -200,6 +201,7 @@
     #helmholtz                   { border-top-color: var(--c-spectral); }
     #nbody, #threebody           { border-top-color: var(--c-nbody); }
     #mosfet-noise, #fram         { border-top-color: var(--c-nano); }
+    #complex-nets                { border-top-color: var(--c-nets); }
 
     .project-inner {
       display: grid;
@@ -354,6 +356,7 @@
     <span><span class="dot" style="background:var(--c-spectral)"></span> Spectral &amp; Numerical</span>
     <span><span class="dot" style="background:var(--c-nbody)"></span> N-body &amp; Celestial</span>
     <span><span class="dot" style="background:var(--c-nano)"></span> Nanoelectronics</span>
+    <span><span class="dot" style="background:var(--c-nets)"></span> Complex Networks</span>
   </div>
 
   <div class="toc-grid">
@@ -372,6 +375,7 @@
     <a href="#fram">🧲 FRAM Cell · Landau-Khalatnikov Model</a>
     <a href="#ising">🔴 Ising Model · Monte Carlo</a>
     <a href="#pml-fdtd">📡 FDTD · Perfectly Matched Layers</a>
+    <a href="#complex-nets">🧠 Complex Networks · Neural, Social &amp; Ecological</a>
   </div>
 
   <div class="project" id="vlasov" style="margin-top:36px;">
@@ -565,6 +569,19 @@
       <div class="project-img">
         <img src="https://raw.githubusercontent.com/Alisama20/FDTD-PML-Absorbing-Boundary-Conditions/main/figures/pml2d_field_comparison.png" alt="2D PML vs PEC"/>
         <figcaption>FDTD 2D: PML (top) absorbs the wave cleanly at six time steps; PEC walls (bottom) produce persistent reflection interference</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="complex-nets">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Complex-Networks-Dynamics">🧠 Complex Networks · Neural, Social &amp; Ecological</a></h3>
+        <p>Three themes of dynamics on complex networks. <strong>Neural networks</strong>: McCulloch–Pitts logic gates, Hodgkin–Huxley conductance-based neuron (full 4D and reduced 2D), FitzHugh–Nagumo excitability, Tsodyks–Markram dynamic synapses (depression/facilitation), and Hopfield attractor memory with finite-temperature phase transition at T<sub>c</sub> = 1. <strong>Social dynamics</strong>: voter model on Watts–Strogatz and Barabási–Albert networks, Abrams–Strogatz language competition. <strong>Ecological networks</strong>: niche model of food webs, trophic coherence, and May stability criterion. Numba JIT-accelerated.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Complex-Networks-Dynamics/master/figures/t4_hopfield.png" alt="Hopfield network memory retrieval"/>
+        <figcaption>Hopfield attractor network: overlap m(T) vs temperature showing the phase transition at T<sub>c</sub> = 1 and memory retrieval dynamics</figcaption>
       </div>
     </div>
   </div>
