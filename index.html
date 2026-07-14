@@ -342,9 +342,9 @@
     .featured-chips span b { color: #6ee7b7; font-weight: 700; }
 
     .featured-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       margin-top: 24px;
       position: relative;
     }
@@ -354,7 +354,6 @@
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(0,0,0,.25);
     }
-    .featured-gallery figure.span2 { grid-column: 1 / -1; }
     .featured-gallery img { width: 100%; height: auto; display: block; background: #fff; }
     .featured-gallery figcaption {
       padding: 12px 16px;
@@ -374,6 +373,45 @@
       font-size: 0.8rem;
       padding: 6px 12px;
       border-radius: 20px;
+    }
+    .featured-hpc {
+      margin-top: 22px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.65;
+      position: relative;
+    }
+    .featured-hpc b { color: #6ee7b7; }
+
+    /* ── Featured entry inside the Projects index ────────────────────── */
+    .toc-featured {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+      margin: 0 0 16px;
+      background: linear-gradient(135deg, #0f172a 0%, #17306b 60%, #1e3a6e 100%);
+      border: 1px solid rgba(147,197,253,.35);
+      border-radius: 14px;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 8px 26px rgba(15,23,42,.28);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .toc-featured:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(15,23,42,.38); text-decoration: none; }
+    .toc-featured .tf-star { font-size: 1.9rem; line-height: 1; }
+    .toc-featured .tf-body { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+    .toc-featured .tf-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #93c5fd; }
+    .toc-featured .tf-title { font-weight: 700; font-size: 1.06rem; line-height: 1.35; }
+    .toc-featured .tf-sub { color: #cbd5e1; font-size: 0.86rem; }
+    .toc-featured .tf-cta { color: #93c5fd; font-size: 0.86rem; font-weight: 600; white-space: nowrap; }
+    @media (max-width: 700px) {
+      .toc-featured { flex-direction: column; text-align: center; }
+      .toc-featured .tf-cta { white-space: normal; }
     }
 
     @media (max-width: 700px) {
@@ -427,60 +465,6 @@
 
 <main>
 
-  <section class="featured">
-    <span class="featured-tag">⭐ Master's Thesis · 2025/26</span>
-    <h2>High-Frequency Computational Electromagnetics in the Time Domain</h2>
-    <div class="featured-sub">A time-domain asymptotic scattering simulator — from Maxwell to radar imaging</div>
-    <p class="lead">
-      Given an incident <strong>pulse</strong> <em>p(t)</em>, the solver returns the <strong>scattered waveform</strong> <em>e(t)</em>
-      directly, via retarded-time integrals — <strong>without solving frequency by frequency</strong>. The full high-frequency
-      asymptotic chain is recast as closed operations on the pulse: <strong>Physical Optics + Shooting-and-Bouncing Rays</strong>,
-      edge diffraction (<strong>GTD / UTD / PTD / ITD</strong>), double- and slope-diffraction, and creeping waves. It is extended
-      to <strong>dielectric, lossy and dispersive materials</strong> applied as causal IIR filters. Every module is validated against
-      an independent exact reference, and the whole chain against <strong>real anechoic-chamber measurements</strong>.
-    </p>
-
-    <div class="featured-chips">
-      <span><b>26/26</b> core validation tests</span>
-      <span><b>8/8</b> material tests</span>
-      <span>vs <b>Mie · MoM · Sommerfeld · Fresnel–Snell</b></span>
-      <span>Experimental <b>INTA</b> agreement</span>
-      <span>Applications: <b>RCS · range-Doppler · ISAR</b></span>
-    </div>
-
-    <div class="featured-gallery">
-      <figure>
-        <img src="assets/tfm/tfm_mie.png" alt="PEC sphere RCS vs Mie series"/>
-        <figcaption><b>Convergence to the exact Mie series.</b> PEC-sphere backscatter RCS from 10 MHz to 100 GHz across the Rayleigh, resonance and optical regimes; the GO + creeping-wave model locks onto the exact Mie solution through the full high-frequency ripple (RMS 0.086).</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/tfm/tfm_triedro.png" alt="Trihedral corner reflector triple-bounce RCS"/>
-        <figcaption><b>Multi-bounce RCS (SBR).</b> Trihedral corner reflector: the triple-bounce physical-optics RCS follows the analytical 12πa⁴/λ² law and matches the MoM reference; the residual is exactly the higher-order edge diffraction.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/tfm/tfm_inta_verify.png" alt="Experimental validation against INTA measurements"/>
-        <figcaption><b>Experimental validation.</b> PO + fringe (PTD) reproduces the RCS measured in the INTA anechoic chamber for a metallic prism (VV, 8 GHz) and a tricone (HH, 6 GHz) across the full angular sweep — the plain-PO curve (grey) misses the nulls that the fringe term recovers.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/tfm/tfm_materials.png" alt="Dispersive Debye material as a real IIR filter"/>
-        <figcaption><b>Dispersive materials in time.</b> A Debye (dispersive) face handled entirely in the time domain: a real 17-section IIR filter reproduces the analytic IFFT of the frequency-domain diffraction coefficient — causal, stable, real-valued output.</figcaption>
-      </figure>
-      <figure class="span2">
-        <img src="assets/tfm/tfm_isar.png" alt="ISAR image of an aircraft-shaped target"/>
-        <figcaption><b>ISAR imaging from time-domain range profiles.</b> The range-Doppler engine reconstructs the scattering centres of an aircraft-shaped target (fuselage + wings + tail) at 2.4 × 3.3 cm resolution — down-range from the range profile, cross-range from the rotational Doppler.</figcaption>
-      </figure>
-    </div>
-
-    <div class="featured-tools">
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
-      <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"/>
-      <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"/>
-      <img src="https://img.shields.io/badge/Numba-00A3E0?style=flat-square" alt="Numba"/>
-      <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
-      <span class="featured-note">🔒 Private repository · to be released after the thesis defence</span>
-    </div>
-  </section>
-
   <h2>About me</h2>
   <div class="about-card">
     <p>I am a physics and mathematics student with a strong interest in <strong>computational methods for physical systems</strong>. My main research areas are:</p>
@@ -516,6 +500,16 @@
     <span><span class="dot" style="background:var(--c-nets)"></span> Complex Networks</span>
   </div>
 
+  <a class="toc-featured" href="#tfm">
+    <span class="tf-star">⭐</span>
+    <span class="tf-body">
+      <span class="tf-tag">Master's Thesis · 2025/26</span>
+      <span class="tf-title">High-Frequency Computational Electromagnetics in the Time Domain</span>
+      <span class="tf-sub">Time-domain scattering simulator — PO/SBR, GTD/UTD/PTD/ITD diffraction, materials, RCS &amp; ISAR imaging</span>
+    </span>
+    <span class="tf-cta">See highlights ↓</span>
+  </a>
+
   <div class="toc-grid">
     <a href="#vlasov">⚡ Collisionless Plasma · Vlasov–Maxwell</a>
     <a href="#mom">🌐 Computational Electromagnetics · Method of Moments</a>
@@ -536,6 +530,67 @@
     <a href="#pimc">⚛️ Path Integral Monte Carlo · Quantum Mechanics</a>
     <a href="#mosfet-tcad">🖥️ MOSFET TCAD · Drift-Diffusion Simulation</a>
   </div>
+
+  <section class="featured" id="tfm">
+    <span class="featured-tag">⭐ Master's Thesis · 2025/26</span>
+    <h2>High-Frequency Computational Electromagnetics in the Time Domain</h2>
+    <div class="featured-sub">A time-domain asymptotic scattering simulator — from Maxwell to radar imaging</div>
+    <p class="lead">
+      Given an incident <strong>pulse</strong> <em>p(t)</em>, the solver returns the <strong>scattered waveform</strong> <em>e(t)</em>
+      directly, via retarded-time integrals — <strong>without solving frequency by frequency</strong>. The full high-frequency
+      asymptotic chain is recast as closed operations on the pulse: <strong>Physical Optics + Shooting-and-Bouncing Rays</strong>,
+      edge diffraction (<strong>GTD / UTD / PTD / ITD</strong>), double- and slope-diffraction, and creeping waves. It is extended
+      to <strong>dielectric, lossy and dispersive materials</strong> applied as causal IIR filters. Every module is validated against
+      an independent exact reference, and the whole chain against <strong>real anechoic-chamber measurements</strong>.
+    </p>
+
+    <div class="featured-chips">
+      <span><b>26/26</b> core validation tests</span>
+      <span><b>8/8</b> material tests</span>
+      <span>vs <b>Mie · MoM · Sommerfeld · Fresnel–Snell</b></span>
+      <span>Experimental <b>INTA</b> agreement</span>
+      <span>Applications: <b>RCS · range-Doppler · ISAR</b></span>
+    </div>
+
+    <div class="featured-gallery">
+      <figure>
+        <img src="assets/tfm/tfm_mie.png" alt="PEC sphere RCS converging to the Mie series"/>
+        <figcaption><b>Convergence to the exact Mie series.</b> PEC-sphere backscatter RCS over six decades of frequency (electrical size ka up to ~150). Refining the time sampling N<sub>t</sub> pushes the agreement of the time-domain Physical Optics (TD-PO) with the exact Mie solution further into the optical regime.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_triedro.png" alt="Trihedral corner reflector multi-bounce RCS"/>
+        <figcaption><b>Multi-bounce RCS via Shooting-and-Bouncing Rays.</b> Trihedral corner reflector: adding 1st, 2nd and 3rd-order bounces, the PO backscatter climbs to the analytical triple-bounce law σ = 12πa⁴/λ² and matches the MoM reference — the single- and double-bounce terms alone fall far short.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_inta_verify.png" alt="Experimental validation against INTA measurements"/>
+        <figcaption><b>Experimental validation.</b> PO + fringe (PTD) reproduces the RCS measured in the INTA anechoic chamber for a metallic prism (VV, 8 GHz) and a tricone (HH, 6 GHz) across the full angular sweep — the plain-PO curve (grey) misses the nulls that the fringe term recovers.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_materials.png" alt="Dispersive Debye material handled as a recursive IIR filter"/>
+        <figcaption><b>Dispersive materials — the IIR engine.</b> Left: Fresnel reflection coefficients of a dielectric face. Right: the core of <code>mat_iir</code> — a dispersive (Debye) permittivity applied as a recursive real IIR filter reproduces the analytic IFFT of ε(ω) exactly, in the time domain and unconditionally stable.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_isar.png" alt="ISAR image of an aircraft-shaped target"/>
+        <figcaption><b>ISAR imaging from time-domain range profiles.</b> The range-Doppler engine reconstructs the scattering centres of an aircraft-shaped target (fuselage + wings + tail) at 2.4 × 3.3 cm resolution — down-range from the range profile, cross-range from the rotational Doppler.</figcaption>
+      </figure>
+    </div>
+
+    <p class="featured-hpc">
+      <b>⚙ HPC.</b> The heavy kernels — ray tracing, PO surface integrals and the diffraction sweeps — are JIT-compiled with
+      <b>Numba</b> and offloaded to the GPU through <b>CUDA</b>. A full angular-and-frequency RCS sweep of an electrically large
+      target therefore runs in seconds on a single workstation rather than hours, which is what makes the experimental validation
+      and the ISAR imaging above tractable.
+    </p>
+
+    <div class="featured-tools">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+      <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"/>
+      <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"/>
+      <img src="https://img.shields.io/badge/Numba-00A3E0?style=flat-square" alt="Numba"/>
+      <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
+      <span class="featured-note">🔒 Private repository · to be released after the thesis defence</span>
+    </div>
+  </section>
 
   <div class="project" id="vlasov" style="margin-top:36px;">
     <div class="project-inner">
