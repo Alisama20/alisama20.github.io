@@ -9,10 +9,10 @@
   <meta property="og:type"        content="website"/>
   <meta property="og:url"         content="https://alisama20.github.io/"/>
   <meta property="og:title"       content="Ali · Computational Physics"/>
-  <meta property="og:description" content="MSc in Physics &amp; Mathematics · University of Granada. Portfolio of computational physics projects: FDTD-PML, Vlasov–Maxwell, Monte Carlo, quantum dynamics, spectral methods and more."/>
-  <meta property="og:image"       content="https://raw.githubusercontent.com/Alisama20/FDTD-PML-Absorbing-Boundary-Conditions/main/figures/pml2d_field_comparison.png"/>
-  <meta property="og:image:width" content="1800"/>
-  <meta property="og:image:height" content="600"/>
+  <meta property="og:description" content="MSc in Physics &amp; Mathematics · University of Granada. MSc thesis: high-frequency computational electromagnetics in the time domain (PO/SBR, GTD/UTD/PTD, materials, ISAR), plus a portfolio of computational physics projects."/>
+  <meta property="og:image"       content="https://alisama20.github.io/assets/tfm/tfm_isar.png"/>
+  <meta property="og:image:width" content="1710"/>
+  <meta property="og:image:height" content="810"/>
 
   <style>
     /* ── Reset & base ────────────────────────────────────────────────── */
@@ -281,6 +281,108 @@
     }
     .stats img { height: 155px; border-radius: 8px; }
 
+    /* ── Featured thesis (TFM) ───────────────────────────────────────── */
+    .featured {
+      background: linear-gradient(135deg, #0f172a 0%, #17306b 60%, #1e3a6e 100%);
+      border-radius: 18px;
+      padding: 40px 36px 36px;
+      margin-bottom: 24px;
+      color: #e2e8f0;
+      box-shadow: 0 12px 40px rgba(15,23,42,.28);
+      position: relative;
+      overflow: hidden;
+    }
+    .featured::before {
+      content: '';
+      position: absolute; top: -100px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(99,102,241,.28) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .featured-tag {
+      display: inline-block;
+      background: rgba(147,197,253,.15);
+      border: 1px solid rgba(147,197,253,.4);
+      color: #93c5fd;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      position: relative;
+    }
+    .featured h2 {
+      color: #fff;
+      font-size: 1.7rem;
+      margin: 16px 0 6px;
+      display: block;
+      position: relative;
+    }
+    .featured h2::after { display: none; }
+    .featured .featured-sub {
+      color: #93c5fd;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .featured p.lead { color: #cbd5e1; font-size: 0.97rem; line-height: 1.72; position: relative; }
+    .featured p.lead strong { color: #e2e8f0; }
+
+    .featured-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 6px; position: relative; }
+    .featured-chips span {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+    }
+    .featured-chips span b { color: #6ee7b7; font-weight: 700; }
+
+    .featured-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 24px;
+      position: relative;
+    }
+    .featured-gallery figure {
+      background: #f8fafc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    }
+    .featured-gallery figure.span2 { grid-column: 1 / -1; }
+    .featured-gallery img { width: 100%; height: auto; display: block; background: #fff; }
+    .featured-gallery figcaption {
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.55;
+      background: #f8fafc;
+    }
+    .featured-gallery figcaption b { color: #1e293b; }
+
+    .featured-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; position: relative; align-items: center; }
+    .featured-note {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .featured { padding: 28px 20px; }
+      .featured h2 { font-size: 1.35rem; }
+      .featured-gallery { grid-template-columns: 1fr; }
+      .featured-gallery figure.span2 { grid-column: auto; }
+    }
+
     /* ── Footer ──────────────────────────────────────────────────────── */
     footer {
       text-align: center;
@@ -324,6 +426,60 @@
 </header>
 
 <main>
+
+  <section class="featured">
+    <span class="featured-tag">⭐ Master's Thesis · 2025/26</span>
+    <h2>High-Frequency Computational Electromagnetics in the Time Domain</h2>
+    <div class="featured-sub">A time-domain asymptotic scattering simulator — from Maxwell to radar imaging</div>
+    <p class="lead">
+      Given an incident <strong>pulse</strong> <em>p(t)</em>, the solver returns the <strong>scattered waveform</strong> <em>e(t)</em>
+      directly, via retarded-time integrals — <strong>without solving frequency by frequency</strong>. The full high-frequency
+      asymptotic chain is recast as closed operations on the pulse: <strong>Physical Optics + Shooting-and-Bouncing Rays</strong>,
+      edge diffraction (<strong>GTD / UTD / PTD / ITD</strong>), double- and slope-diffraction, and creeping waves. It is extended
+      to <strong>dielectric, lossy and dispersive materials</strong> applied as causal IIR filters. Every module is validated against
+      an independent exact reference, and the whole chain against <strong>real anechoic-chamber measurements</strong>.
+    </p>
+
+    <div class="featured-chips">
+      <span><b>26/26</b> core validation tests</span>
+      <span><b>8/8</b> material tests</span>
+      <span>vs <b>Mie · MoM · Sommerfeld · Fresnel–Snell</b></span>
+      <span>Experimental <b>INTA</b> agreement</span>
+      <span>Applications: <b>RCS · range-Doppler · ISAR</b></span>
+    </div>
+
+    <div class="featured-gallery">
+      <figure>
+        <img src="assets/tfm/tfm_mie.png" alt="PEC sphere RCS vs Mie series"/>
+        <figcaption><b>Convergence to the exact Mie series.</b> PEC-sphere backscatter RCS from 10 MHz to 100 GHz across the Rayleigh, resonance and optical regimes; the GO + creeping-wave model locks onto the exact Mie solution through the full high-frequency ripple (RMS 0.086).</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_triedro.png" alt="Trihedral corner reflector triple-bounce RCS"/>
+        <figcaption><b>Multi-bounce RCS (SBR).</b> Trihedral corner reflector: the triple-bounce physical-optics RCS follows the analytical 12πa⁴/λ² law and matches the MoM reference; the residual is exactly the higher-order edge diffraction.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_inta_verify.png" alt="Experimental validation against INTA measurements"/>
+        <figcaption><b>Experimental validation.</b> PO + fringe (PTD) reproduces the RCS measured in the INTA anechoic chamber for a metallic prism (VV, 8 GHz) and a tricone (HH, 6 GHz) across the full angular sweep — the plain-PO curve (grey) misses the nulls that the fringe term recovers.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/tfm/tfm_materials.png" alt="Dispersive Debye material as a real IIR filter"/>
+        <figcaption><b>Dispersive materials in time.</b> A Debye (dispersive) face handled entirely in the time domain: a real 17-section IIR filter reproduces the analytic IFFT of the frequency-domain diffraction coefficient — causal, stable, real-valued output.</figcaption>
+      </figure>
+      <figure class="span2">
+        <img src="assets/tfm/tfm_isar.png" alt="ISAR image of an aircraft-shaped target"/>
+        <figcaption><b>ISAR imaging from time-domain range profiles.</b> The range-Doppler engine reconstructs the scattering centres of an aircraft-shaped target (fuselage + wings + tail) at 2.4 × 3.3 cm resolution — down-range from the range profile, cross-range from the rotational Doppler.</figcaption>
+      </figure>
+    </div>
+
+    <div class="featured-tools">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+      <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"/>
+      <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"/>
+      <img src="https://img.shields.io/badge/Numba-00A3E0?style=flat-square" alt="Numba"/>
+      <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
+      <span class="featured-note">🔒 Private repository · to be released after the thesis defence</span>
+    </div>
+  </section>
 
   <h2>About me</h2>
   <div class="about-card">
