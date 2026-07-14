@@ -196,11 +196,12 @@
     /* category top-border colours */
     #vlasov, #mom, #pml-fdtd    { border-top-color: var(--c-em); }
     #dmc, #tdse, #fft,
-    #quantum-transport           { border-top-color: var(--c-quantum); }
+    #quantum-transport, #pimc    { border-top-color: var(--c-quantum); }
     #ising, #egt, #critical      { border-top-color: var(--c-mc); }
     #helmholtz                   { border-top-color: var(--c-spectral); }
     #nbody, #threebody           { border-top-color: var(--c-nbody); }
-    #mosfet-noise, #fram         { border-top-color: var(--c-nano); }
+    #mosfet-noise, #fram,
+    #mosfet-tcad                 { border-top-color: var(--c-nano); }
     #complex-nets                { border-top-color: var(--c-nets); }
 
     .project-inner {
@@ -376,6 +377,8 @@
     <a href="#ising">🔴 Ising Model · Monte Carlo</a>
     <a href="#pml-fdtd">📡 FDTD · Perfectly Matched Layers</a>
     <a href="#complex-nets">🧠 Complex Networks · Neural, Social &amp; Ecological</a>
+    <a href="#pimc">⚛️ Path Integral Monte Carlo · Quantum Mechanics</a>
+    <a href="#mosfet-tcad">🖥️ MOSFET TCAD · Drift-Diffusion Simulation</a>
   </div>
 
   <div class="project" id="vlasov" style="margin-top:36px;">
@@ -582,6 +585,32 @@
       <div class="project-img">
         <img src="https://raw.githubusercontent.com/Alisama20/Complex-Networks-Dynamics/master/figures/t4_hopfield.png" alt="Hopfield network memory retrieval"/>
         <figcaption>Hopfield attractor network: overlap m(T) vs temperature showing the phase transition at T<sub>c</sub> = 1 and memory retrieval dynamics</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="pimc">
+    <div class="project-inner">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/Path-Integral-Monte-Carlo">⚛️ Path Integral Monte Carlo · Quantum Mechanics</a></h3>
+        <p>Lattice Monte Carlo simulation of quantum mechanics in Euclidean (imaginary) time, following Creutz &amp; Freedman (1981). Implements the Metropolis algorithm on a discrete path-integral lattice to compute ground-state wavefunctions, energy levels, external-source response, renormalised effective potentials, and instanton (kink) configurations in the double-well potential. Numba JIT-compiled; validated against exact analytical results and the Blankenbecler-DeGrand-Sugar benchmark.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/Path-Integral-Monte-Carlo/master/figures/fig_15_kink_simple.png" alt="Instanton kink"/>
+        <figcaption>Single instanton kink: Metropolis path transitioning between double-well minima, compared to the analytical tanh solution</figcaption>
+      </div>
+    </div>
+  </div>
+
+  <div class="project" id="mosfet-tcad">
+    <div class="project-inner reverse">
+      <div class="project-text">
+        <h3><a href="https://github.com/Alisama20/MOSFET-TCAD-Sentaurus">🖥️ MOSFET TCAD · 180 nm Drift-Diffusion Simulation</a></h3>
+        <p>2D TCAD drift-diffusion simulation of a 180 nm n-channel MOSFET on a p-type Si substrate using Synopsys Sentaurus (SDE + SDevice + Inspect). Generates the complete I–V characterisation (ID–VG transfer curves, ID–VD output curves), extracts key figures of merit (V<sub>T</sub>, SS, g<sub>m</sub>, I<sub>ON</sub>/I<sub>OFF</sub>, DIBL), and optimises the gate metal work function across four variants to maximise the I<sub>ON</sub>/I<sub>OFF</sub> ratio.</p>
+      </div>
+      <div class="project-img">
+        <img src="https://raw.githubusercontent.com/Alisama20/MOSFET-TCAD-Sentaurus/master/figures/fig05_idvd_familia.png" alt="MOSFET ID-VD family"/>
+        <figcaption>ID–VD output curves for V<sub>G</sub> = 0.3, 0.6, 0.9, 1.2 V — triode and saturation regions</figcaption>
       </div>
     </div>
   </div>
