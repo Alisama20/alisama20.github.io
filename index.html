@@ -131,6 +131,44 @@
     /* ── Tools ───────────────────────────────────────────────────────── */
     .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 
+    /* ── Skills ──────────────────────────────────────────────────────── */
+    .skills-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .skill-row { display: flex; flex-direction: column; gap: 9px; }
+    .skill-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+    }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-chips span {
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #1e3a8a;
+      padding: 6px 13px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+    }
+    .skill-chips.tfm span {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a6e 100%);
+      border: 1px solid rgba(147,197,253,.4);
+      color: #dbeafe;
+    }
+    .skill-chips.comp span {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #065f46;
+    }
+
     /* ── TOC ─────────────────────────────────────────────────────────── */
     .toc-grid {
       display: grid;
@@ -159,6 +197,15 @@
       box-shadow: 0 4px 14px rgba(37,99,235,.25);
       text-decoration: none;
     }
+    /* category-tinted index pills */
+    .toc-grid a.cat-em       { background: rgba(14,165,233,.10);  border-left: 4px solid var(--c-em); }
+    .toc-grid a.cat-quantum  { background: rgba(124,58,237,.10);  border-left: 4px solid var(--c-quantum); }
+    .toc-grid a.cat-mc       { background: rgba(5,150,105,.10);   border-left: 4px solid var(--c-mc); }
+    .toc-grid a.cat-spectral { background: rgba(217,119,6,.10);   border-left: 4px solid var(--c-spectral); }
+    .toc-grid a.cat-nbody    { background: rgba(37,99,235,.10);   border-left: 4px solid var(--c-nbody); }
+    .toc-grid a.cat-nano     { background: rgba(219,39,119,.10);  border-left: 4px solid var(--c-nano); }
+    .toc-grid a.cat-nets     { background: rgba(249,115,22,.10);  border-left: 4px solid var(--c-nets); }
+    .toc-grid a[class*="cat-"]:hover { background: var(--link); color: #fff; }
 
     /* ── Category legend ─────────────────────────────────────────────── */
     .legend {
@@ -476,6 +523,50 @@
     <p>I enjoy working at the intersection of mathematical rigour and physical intuition, building solvers from scratch and comparing them with theoretical predictions.</p>
   </div>
 
+  <h2>🧠 Skills</h2>
+  <div class="skills-card">
+    <div class="skill-row">
+      <div class="skill-label">Scientific · MSc Thesis</div>
+      <div class="skill-chips tfm">
+        <span>Physical Optics — Time Domain</span>
+        <span>Ray Tracing (multi-bounce SBR)</span>
+        <span>Edge Diffraction (GTD / UTD / PTD / ITD)</span>
+        <span>RCS Computation</span>
+        <span>ISAR &amp; range-Doppler Imaging</span>
+        <span>Dispersive Materials (causal IIR filters)</span>
+        <span>Maxwell's Equations</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Scientific · Projects</div>
+      <div class="skill-chips">
+        <span>Method of Moments (EFIE / MFIE / RWG)</span>
+        <span>FDTD (1D/2D + PML)</span>
+        <span>Helmholtz Spectral Solver (Chebyshev–Galerkin)</span>
+        <span>Monte Carlo (Metropolis / DMC / PIMC / PIC)</span>
+        <span>Vlasov–Maxwell (Semi-Lagrangian)</span>
+        <span>Schrödinger (Crank–Nicolson)</span>
+        <span>N-body Integrators (Verlet)</span>
+        <span>TCAD Drift-Diffusion</span>
+        <span>CFD (Navier–Stokes, C++)</span>
+        <span>Complex Networks Dynamics</span>
+        <span>Multi-physics Coupling</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Computing</div>
+      <div class="skill-chips comp">
+        <span>Python (NumPy / SciPy)</span>
+        <span>C/C++ Scientific Computing</span>
+        <span>GPU Acceleration (CUDA / Numba)</span>
+        <span>Parallelisation &amp; HPC Simulation</span>
+        <span>FFT &amp; Signal Processing</span>
+        <span>Git / CMake</span>
+        <span>LaTeX</span>
+      </div>
+    </div>
+  </div>
+
   <h2>🛠 Tools</h2>
   <div class="tools">
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
@@ -511,24 +602,24 @@
   </a>
 
   <div class="toc-grid">
-    <a href="#vlasov">⚡ Collisionless Plasma · Vlasov–Maxwell</a>
-    <a href="#mom">🌐 Computational Electromagnetics · Method of Moments</a>
-    <a href="#dmc">🎲 Quantum Monte Carlo · Harmonic Bosons</a>
-    <a href="#tdse">🌊 Quantum Dynamics · Schrödinger Equation</a>
-    <a href="#helmholtz">📐 Spectral Methods · Helmholtz Equation</a>
-    <a href="#nbody">🌌 N-body Dynamics · Molecular &amp; Planetary</a>
-    <a href="#quantum-transport">🔬 Quantum Transport · Nanoelectronics</a>
-    <a href="#threebody">🪐 Celestial Mechanics · Three-Body Problem</a>
-    <a href="#critical">📈 Critical Phenomena &amp; Cooperative Systems</a>
-    <a href="#fft">🔢 FFT &amp; Quantum Physics</a>
-    <a href="#egt">🧬 Stochastic Evolutionary Game Theory</a>
-    <a href="#mosfet-noise">📡 MOSFET 1/f Noise · McWhorter Model</a>
-    <a href="#fram">🧲 FRAM Cell · Landau-Khalatnikov Model</a>
-    <a href="#ising">🔴 Ising Model · Monte Carlo</a>
-    <a href="#pml-fdtd">📡 FDTD · Perfectly Matched Layers</a>
-    <a href="#complex-nets">🧠 Complex Networks · Neural, Social &amp; Ecological</a>
-    <a href="#pimc">⚛️ Path Integral Monte Carlo · Quantum Mechanics</a>
-    <a href="#mosfet-tcad">🖥️ MOSFET TCAD · Drift-Diffusion Simulation</a>
+    <a class="cat-em" href="#vlasov">⚡ Collisionless Plasma · Vlasov–Maxwell</a>
+    <a class="cat-em" href="#mom">🌐 Computational Electromagnetics · Method of Moments</a>
+    <a class="cat-quantum" href="#dmc">🎲 Quantum Monte Carlo · Harmonic Bosons</a>
+    <a class="cat-quantum" href="#tdse">🌊 Quantum Dynamics · Schrödinger Equation</a>
+    <a class="cat-spectral" href="#helmholtz">📐 Spectral Methods · Helmholtz Equation</a>
+    <a class="cat-nbody" href="#nbody">🌌 N-body Dynamics · Molecular &amp; Planetary</a>
+    <a class="cat-quantum" href="#quantum-transport">🔬 Quantum Transport · Nanoelectronics</a>
+    <a class="cat-nbody" href="#threebody">🪐 Celestial Mechanics · Three-Body Problem</a>
+    <a class="cat-mc" href="#critical">📈 Critical Phenomena &amp; Cooperative Systems</a>
+    <a class="cat-quantum" href="#fft">🔢 FFT &amp; Quantum Physics</a>
+    <a class="cat-mc" href="#egt">🧬 Stochastic Evolutionary Game Theory</a>
+    <a class="cat-nano" href="#mosfet-noise">📡 MOSFET 1/f Noise · McWhorter Model</a>
+    <a class="cat-nano" href="#fram">🧲 FRAM Cell · Landau-Khalatnikov Model</a>
+    <a class="cat-mc" href="#ising">🔴 Ising Model · Monte Carlo</a>
+    <a class="cat-em" href="#pml-fdtd">📡 FDTD · Perfectly Matched Layers</a>
+    <a class="cat-nets" href="#complex-nets">🧠 Complex Networks · Neural, Social &amp; Ecological</a>
+    <a class="cat-quantum" href="#pimc">⚛️ Path Integral Monte Carlo · Quantum Mechanics</a>
+    <a class="cat-nano" href="#mosfet-tcad">🖥️ MOSFET TCAD · Drift-Diffusion Simulation</a>
   </div>
 
   <section class="featured" id="tfm">
