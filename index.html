@@ -51,8 +51,8 @@
         radial-gradient(1.4px 1.4px at 80px 210px, rgba(255,255,255,.7), transparent 2px),
         radial-gradient(1px 1px at 265px 250px, rgba(196,181,253,.7),  transparent 1.6px),
         radial-gradient(1.8px 1.8px at 165px 290px, rgba(255,255,255,.45), transparent 2.4px),
-        radial-gradient(ellipse 120% 80% at 25% -10%, rgba(49,46,129,.55) 0%, transparent 60%),
-        radial-gradient(ellipse 100% 70% at 85% 110%, rgba(30,58,110,.5) 0%, transparent 60%);
+        radial-gradient(ellipse 120% 80% at 25% -10%, rgba(49,46,129,.28) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 70% at 85% 110%, rgba(30,58,110,.25) 0%, transparent 60%);
       background-size: 340px 330px, 340px 330px, 340px 330px, 340px 330px, 340px 330px, 340px 330px, 340px 330px, 100% 100%, 100% 100%;
       background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat;
       background-attachment: fixed;
@@ -201,10 +201,10 @@
       align-items: center;
       gap: 8px;
       padding: 9px 16px;
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.18);
       border-radius: 30px;
-      color: var(--text);
+      color: #e2e8f0;
       font-size: 0.88rem;
       text-decoration: none;
       transition: background .18s, color .18s, border-color .18s, transform .18s, box-shadow .18s;
@@ -218,13 +218,13 @@
       text-decoration: none;
     }
     /* category-tinted index pills */
-    .toc-grid a.cat-em       { background: rgba(14,165,233,.10);  border-left: 4px solid var(--c-em); }
-    .toc-grid a.cat-quantum  { background: rgba(124,58,237,.10);  border-left: 4px solid var(--c-quantum); }
-    .toc-grid a.cat-mc       { background: rgba(5,150,105,.10);   border-left: 4px solid var(--c-mc); }
-    .toc-grid a.cat-spectral { background: rgba(217,119,6,.10);   border-left: 4px solid var(--c-spectral); }
-    .toc-grid a.cat-nbody    { background: rgba(37,99,235,.10);   border-left: 4px solid var(--c-nbody); }
-    .toc-grid a.cat-nano     { background: rgba(219,39,119,.10);  border-left: 4px solid var(--c-nano); }
-    .toc-grid a.cat-nets     { background: rgba(249,115,22,.10);  border-left: 4px solid var(--c-nets); }
+    .toc-grid a.cat-em       { background: rgba(14,165,233,.20);  border-left: 4px solid var(--c-em); }
+    .toc-grid a.cat-quantum  { background: rgba(124,58,237,.22);  border-left: 4px solid var(--c-quantum); }
+    .toc-grid a.cat-mc       { background: rgba(5,150,105,.22);   border-left: 4px solid var(--c-mc); }
+    .toc-grid a.cat-spectral { background: rgba(217,119,6,.20);   border-left: 4px solid var(--c-spectral); }
+    .toc-grid a.cat-nbody    { background: rgba(37,99,235,.22);   border-left: 4px solid var(--c-nbody); }
+    .toc-grid a.cat-nano     { background: rgba(219,39,119,.20);  border-left: 4px solid var(--c-nano); }
+    .toc-grid a.cat-nets     { background: rgba(249,115,22,.20);  border-left: 4px solid var(--c-nets); }
     .toc-grid a[class*="cat-"]:hover { background: var(--link); color: #fff; }
 
     /* ── Category legend ─────────────────────────────────────────────── */
@@ -941,7 +941,7 @@
     <h2>📊 GitHub Stats</h2>
     <div class="stats">
       <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=Alisama20&show_icons=true&theme=tokyonight&hide_border=true" alt="stats"/>
-      <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Alisama20&layout=compact&theme=tokyonight&hide_border=true" alt="langs"/>
+      <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Alisama20&layout=compact&theme=tokyonight&hide_border=true&hide=jupyter%20notebook,tex,html" alt="langs"/>
     </div>
   </div>
 
