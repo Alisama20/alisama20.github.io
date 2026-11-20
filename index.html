@@ -9,7 +9,7 @@
   <meta property="og:type"        content="website"/>
   <meta property="og:url"         content="https://alisama20.github.io/"/>
   <meta property="og:title"       content="Ali · Computational Physics"/>
-  <meta property="og:description" content="MSc in Physics &amp; Mathematics · University of Granada. MSc thesis: high-frequency computational electromagnetics in the time domain (PO/SBR, GTD/UTD/PTD, materials, ISAR), plus a portfolio of computational physics projects."/>
+  <meta property="og:description" content="Physicist and simulation developer at GDSFactory · MSc in Physics &amp; Mathematics, University of Granada. MSc thesis: high-frequency computational electromagnetics in the time domain (PO/SBR, GTD/UTD/PTD, materials, ISAR), plus a portfolio of computational physics projects."/>
   <meta property="og:image"       content="https://alisama20.github.io/assets/tfm/tfm_isar.png"/>
   <meta property="og:image:width" content="1710"/>
   <meta property="og:image:height" content="810"/>
@@ -188,6 +188,30 @@
       border-color: #a7f3d0;
       color: #065f46;
     }
+
+    /* ── Open source ─────────────────────────────────────────────────── */
+    .oss-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .oss-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--c-em);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .oss-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.18); }
+    .oss-name { font-weight: 700; font-size: 1.1rem; color: var(--link); }
+    .oss-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.55; flex: 1; }
+    .oss-tag {
+      align-self: flex-start;
+      background: #eff6ff; border: 1px solid #dbeafe; color: #1e3a8a;
+      font-size: 0.74rem; font-weight: 600; padding: 3px 10px; border-radius: 12px;
+    }
+    @media (max-width: 700px) { .oss-grid { grid-template-columns: 1fr; } }
 
     /* ── TOC ─────────────────────────────────────────────────────────── */
     .toc-grid {
@@ -522,8 +546,9 @@
 
 <header>
   <h1>Hi, I'm Ali <span class="wave">👋</span></h1>
-  <p class="subtitle">MSc in Physics &amp; Mathematics · University of Granada, Spain</p>
+  <p class="subtitle">Physicist &amp; simulation developer · MSc in Physics &amp; Mathematics, University of Granada</p>
   <div class="badges">
+    <a href="Ali_Salem_Amari_Rabah_CV_2026.pdf"><img src="https://img.shields.io/badge/CV-PDF-E4572E?style=flat-square&logo=readme&logoColor=white" alt="CV"/></a>
     <a href="mailto:alisalemstd@gmail.com"><img src="https://img.shields.io/badge/email-alisalemstd%40gmail.com-blue?style=flat-square&logo=gmail&logoColor=white" alt="email"/></a>
     <a href="https://github.com/Alisama20"><img src="https://img.shields.io/badge/GitHub-Alisama20-181717?style=flat-square&logo=github" alt="github"/></a>
     <a href="https://www.linkedin.com/in/alisama"><img src="https://img.shields.io/badge/LinkedIn-alisama-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="linkedin"/></a>
@@ -534,7 +559,7 @@
 
   <h2>About me</h2>
   <div class="about-card">
-    <p>I am a physics and mathematics student with a strong interest in <strong>computational methods for physical systems</strong>. My main research areas are:</p>
+    <p>I am a physicist and simulation developer. I hold an MSc in Physics and Mathematics from the University of Granada and work on open-source simulation tools at <strong>GDSFactory</strong>, with a focus on <strong>computational methods for physical systems</strong>. My main areas are:</p>
     <ul class="about-list">
       <li><span>🔵</span><span><strong>Computational Electromagnetics</strong> — integral equation methods, scattering, wave propagation</span></li>
       <li><span>🟢</span><span><strong>Monte Carlo Methods</strong> — stochastic simulation, diffusion MC, particle-in-cell</span></li>
@@ -543,8 +568,37 @@
     <p>I enjoy working at the intersection of mathematical rigour and physical intuition, building solvers from scratch and comparing them with theoretical predictions.</p>
   </div>
 
+  <h2>🧩 Open source</h2>
+  <div class="oss-grid">
+    <a class="oss-card" href="https://github.com/gdsfactory/gsim">
+      <span class="oss-name">gsim</span>
+      <span class="oss-desc">Electromagnetic simulation for photonics and electronics.</span>
+      <span class="oss-tag">contributor · GDSFactory</span>
+    </a>
+    <a class="oss-card" href="https://github.com/awslabs/palace">
+      <span class="oss-name">Palace</span>
+      <span class="oss-desc">3D finite element solver for computational electromagnetics.</span>
+      <span class="oss-tag">contributor</span>
+    </a>
+    <a class="oss-card" href="https://github.com/scikit-rf/scikit-rf">
+      <span class="oss-name">scikit-rf</span>
+      <span class="oss-desc">RF and microwave engineering in Python.</span>
+      <span class="oss-tag">contributor</span>
+    </a>
+  </div>
+
   <h2>🧠 Skills</h2>
   <div class="skills-card">
+    <div class="skill-row">
+      <div class="skill-label">Professional · Open-source simulation</div>
+      <div class="skill-chips">
+        <span>Finite-element EM (Palace)</span>
+        <span>Photonic &amp; RF device simulation</span>
+        <span>Solver benchmarking &amp; validation</span>
+        <span>Python packaging &amp; CI</span>
+        <span>Code review &amp; documentation</span>
+      </div>
+    </div>
     <div class="skill-row">
       <div class="skill-label">Scientific · MSc Thesis</div>
       <div class="skill-chips tfm">
@@ -700,7 +754,7 @@
       <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"/>
       <img src="https://img.shields.io/badge/Numba-00A3E0?style=flat-square" alt="Numba"/>
       <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA"/>
-      <span class="featured-note">🔒 Private repository · to be released after the thesis defence</span>
+      <span class="featured-note">🔒 Private repository</span>
     </div>
   </section>
 
@@ -948,7 +1002,7 @@
 
 </main>
 
-<footer>University of Granada · Faculty of Sciences · Academic Year 2025/2026</footer>
+<footer>Ali · Granada, Spain · <a href="Ali_Salem_Amari_Rabah_CV_2026.pdf" style="color:#93c5fd">CV (PDF)</a></footer>
 
 </body>
 </html>
